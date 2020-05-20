@@ -6,3 +6,10 @@ checkpoints/
 *.jpg
 SUBMISSION*
 venv/
+Pytorch-UNet.iml
+misc.xml
+modules.xml
+vcs.xml
+workspace.xml
+events.out.tfevents.1589969743.VALERIO-PC.13212.0
+events.out.tfevents.1589970103.VALERIO-PC.1104.0
