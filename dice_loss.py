@@ -1,6 +1,11 @@
 import torch
 from torch.autograd import Function
 
+"""
+    See https://towardsdatascience.com/understanding-dice-loss-for-crisp-boundary-detection-bb30c2e5f62b
+    for further explanations
+"""
+
 
 class DiceCoeff(Function):
     """Dice coeff for individual examples"""

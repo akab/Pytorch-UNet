@@ -100,6 +100,15 @@ def plot_filters_multi_channel(t):
 
 
 def plot_weights(model, layer_name, single_channel=True, collated=False):
+    """
+    based on https://towardsdatascience.com/visualizing-convolution-neural-networks-using-pytorch-3dfa8443e74e
+    :param model:
+    :param layer_name:
+    :param single_channel:
+    :param collated:
+    :return:
+    """
+    # TODO map all conv layers / move dict into the model
     idx2layer = {'conv11': model.inc.double_conv[0],
                  'conv12': model.inc.double_conv[3],
                  'conv21': model.down1.maxpool_conv[1].double_conv[0],
