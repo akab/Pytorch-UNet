@@ -1,6 +1,7 @@
 import argparse
 import logging
 import os
+import time
 
 import numpy as np
 import torch
@@ -118,11 +119,13 @@ if __name__ == "__main__":
 
         img = Image.open(fn)
 
+        start_time = time.time()
         mask = predict_img(net=net,
                            full_img=img,
                            scale_factor=args.scale,
                            out_threshold=args.mask_threshold,
                            device=device)
+        print("--- prediction time: %s s ---" % (time.time() - start_time))
 
         if not args.no_save:
             out_fn = out_files[i]
