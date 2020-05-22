@@ -13,6 +13,7 @@ from eval import eval_net
 from unet import UNet
 
 from torch.utils.tensorboard import SummaryWriter
+from torch.backends import cudnn
 from utils.dataset import BasicDataset
 from torch.utils.data import DataLoader, random_split
 
@@ -168,7 +169,8 @@ if __name__ == '__main__':
 
     net.to(device=device)
     # faster convolutions, but more memory
-    # cudnn.benchmark = True
+    cudnn.benchmark = True
+    cudnn.fastest = True
 
     try:
         train_net(net=net,
